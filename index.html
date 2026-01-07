@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Last-Minute BRAC Essay Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #ffd1b6;
+            --text-color: #000000;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --accent: #e67e51;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-top: 70px; /* Space for sticky header */
+        }
+        
+        /* Sticky Header with CTA */
+        .sticky-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--text-color);
+            color: var(--primary-bg);
+            padding: 15px 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .header-cta {
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+            padding: 10px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .header-cta:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero-section {
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+        
+        .title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 400;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        
+        .highlight-badge {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Side-by-Side Content Section */
+        .content-section {
+            padding: 40px 0 60px;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+        
+        .description-column {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .description-text {
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+        }
+        
+        .credential-box {
+            background-color: rgba(230, 126, 81, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .credential-text {
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+        
+        .features-list {
+            margin: 25px 0;
+        }
+        
+        .feature-item {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .feature-item::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        /* Preview Column */
+        .preview-column {
+            position: sticky;
+            top: 100px; /* Below sticky header */
+        }
+        
+        .preview-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            margin-bottom: 25px;
+        }
+        
+        .preview-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .preview-placeholder {
+            padding: 60px 40px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+        
+        .placeholder-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+        
+        .screenshot-instruction {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+        
+        .price-note {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 40px 0;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--text-color);
+            color: var(--primary-bg);
+            padding: 18px 45px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--text-color);
+        }
+        
+        .cta-button:hover {
+            background-color: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .preview-column {
+                position: static;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+            
+            .title {
+                font-size: 2.2rem;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .header-title {
+                font-size: 0.95rem;
+            }
+            
+            .description-column, .preview-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Header with CTA -->
+    <div class="sticky-header">
+        <div class="header-content">
+            <div class="header-title">The Last-Minute BRAC Essay Guide</div>
+            <a href="https://forms.gle/6DRcQXYWenUVbDFUA" class="header-cta" target="_blank">
+                Order Now
+            </a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1 class="title">The Last-Minute BRAC Essay Guide</h1>
+            <p class="subtitle">Your strategic advantage for the most decisive section of the admission test</p>
+            <div class="highlight-badge">48-Hour Preparation Framework</div>
+        </section>
+        
+        <!-- Side-by-Side Content -->
+        <section class="content-section">
+            <div class="content-grid">
+                <!-- Left Column: Description -->
+                <div class="description-column">
+                    <h2 class="section-title">About This Guide</h2>
+                    <p class="description-text">
+                        The Last-Minute BRAC Essay Guide is designed for students preparing for the BRAC University admission test with very limited time.
+                    </p>
+                    <p class="description-text">
+                        In the BRAC exam, the essay carries almost 50% of the total marks, making it the most decisive section. This guide focuses only on essays — because that is where improvement matters most.
+                    </p>
+                    
+                    <div class="credential-box">
+                        <p class="credential-text">
+                            In the last Spring intake (Slot-1), I secured my dream subject CSE with rank 24. The strategies and techniques I used for the essay section have been summarized in this ebook in a clear, practical way.
+                        </p>
+                    </div>
+                    
+                    <p class="description-text">
+                        Designed for the final 48 hours before the exam, the guide covers:
+                    </p>
+                    
+                    <div class="features-list">
+                        <div class="feature-item">Essay structure and marking criteria</div>
+                        <div class="feature-item">Introductions, body paragraphs, and conclusions</div>
+                        <div class="feature-item">Different types of essays</div>
+                        <div class="feature-item">Polishing your writing (style, clarity, and mechanics)</div>
+                        <div class="feature-item">Sample essays for guidance</div>
+                    </div>
+                    
+                    <p class="description-text">
+                        Creating this guide took significant effort, so I'm charging a very small fee. To order The Last-Minute BRAC Essay Guide, please fill in the attached link below.
+                    </p>
+                </div>
+                
+                <!-- Right Column: Preview -->
+                <div class="preview-column">
+                    <div class="preview-card">
+                        <!-- REPLACE THIS WITH YOUR SCREENSHOT -->
+                        <img src="guide-preview.jpg" alt="BRAC Essay Guide Preview" class="preview-image">
+                        <!-- 
+                        TO ADD YOUR SCREENSHOT:
+                        1. Take screenshots of 2-3 key pages
+                        2. Combine them into one tall image using Canva or any editor
+                        3. Save as 'guide-preview.jpg'
+                        4. Replace the entire .preview-placeholder div with:
+                           <img src="guide-preview.jpg" alt="BRAC Essay Guide Preview" class="preview-image">
+                        -->
+                    </div>
+                                        
+                    <div class="price-note">
+                        <p><strong>Small one-time fee • Instant delivery via email</strong></p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom CTA Section -->
+            <div class="cta-section">
+                <h2>Ready to Ace Your BRAC Essay?</h2>
+                <p style="margin: 20px 0; font-size: 1.1rem;">Get instant access to the complete guide</p>
+                <a href="https://forms.gle/6DRcQXYWenUVbDFUA" class="cta-button" target="_blank">
+                    Order via Google Form
+                </a>
+                <p style="margin-top: 15px; font-size: 0.95rem; opacity: 0.8;">
+                    Secure form • Payment instructions included • Delivery within 1 hour
+                </p>
+            </div>
+        </section>
+        
+        <footer>
+            <p>The Last-Minute BRAC Essay Guide © 2023</p>
+            <p style="margin-top: 10px;">This guide is independently created and not officially affiliated with BRAC University.</p>
+        </footer>
+    </div>
+</body>
+</html>
